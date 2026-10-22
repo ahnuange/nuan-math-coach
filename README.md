@@ -40,12 +40,18 @@
 
 ## 怎么装
 
-把 `nuan-math-coach/` 目录放进你的 skills 目录，保持 `SKILL.md` 与 `references/` 的相对位置：
+一句话版本（直接对着你的 AI 说）：
+
+> 安装 github 上的 nuan-math-coach skill：https://github.com/ahnuange/nuan-math-coach
+
+装好以后输入 `/nuan-math-coach` 就开始了。
+
+对面要是不认这句话（没有装 skill 的能力），退回手动：把 `nuan-math-coach/` 目录放进你的 skills 目录，保持 `SKILL.md` 与 `references/` 的相对位置——
 
 - Claude Code：`~/.claude/skills/nuan-math-coach/`
 - Cola：`~/.cola/skills/nuan-math-coach/`
 
-触发方式：`/nuan-math-coach`。
+触发方式都是 `/nuan-math-coach`。
 
 没有 skills 机制的模型也能用：规则全部写在 `SKILL.md` 一个文件里，把它作为系统提示直接贴进去即可；`references/` 只是完整版附录，不装也能跑。这种环境写不了文件——内部日志与思维档案会按固定格式贴出来，你自己留着就行。
 
