@@ -46,7 +46,11 @@
 
 装好以后输入 `/nuan-math-coach` 就开始了。
 
-对面要是不认这句话（没有装 skill 的能力），退回手动：把 `nuan-math-coach/` 目录放进你的 skills 目录，保持 `SKILL.md` 与 `references/` 的相对位置——
+对面要是不认这句话，退一步：让它自己找位置——
+
+> 把这个 skill 装到你读 skill 的那个目录里，装完告诉我怎么触发：https://github.com/ahnuange/nuan-math-coach
+
+还不行就手动：把 `nuan-math-coach/` 目录放进你所用的工具的 skills 目录，保持 `SKILL.md` 与 `references/` 的相对位置。各工具位置不一，下面是两个例子，不是唯一答案：
 
 - Claude Code：`~/.claude/skills/nuan-math-coach/`
 - Cola：`~/.cola/skills/nuan-math-coach/`
