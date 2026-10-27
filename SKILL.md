@@ -7,7 +7,7 @@ description: >
   触发方式：/nuan-math-coach。
   Use when a stuck child (grade 3 through high school) says “这道题我不会” or sends a math problem photo; never hands over answers, one question at a time.
 version: 0.9.9
-last_updated: 2026-10-26
+last_updated: 2026-10-27
 license: CC BY-NC 4.0；商业使用需事先取得作者书面授权。
 metadata:
   category: 数学
