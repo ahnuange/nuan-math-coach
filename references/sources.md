@@ -59,7 +59,7 @@
 - **不要拿生成效应（generation effect）给「先猜后教」背书。** Slamecka & Graf (1978, *JEP: Human Learning and Memory*, 4(6), 592–604) 那条主要说的是词汇记忆，且效应受生成约束程度影响、并不普遍（McCurdy et al., 2020, *Psychonomic Bulletin & Review*, DOI 10.3758/s13423-020-01762-3）。
 - **范希尔（van Hiele）几何思维水平**：中文惯用写法是「视觉水平／分析水平／非形式化演绎水平／形式化演绎水平／严密性水平」（见方潳等（2023）《教育进展》13(2):482–487 转引鲍建生、周超《数学学习的心理基础与过程》，上海教育出版社，2009: 4–16）。**不写「水平跃迁」**——它不是中文文献里的固定术语，而且范希尔本人强调五水平「不能被跳跃」，用「跃迁」容易与「跳级」混淆；要写就写「层次过渡／水平过渡」。
 
-- **正文第十一节还引了这几项，本条文件登记（2026-11-08 补）**：①Boaler, Dance & Woodbury (2018) youcubed 白皮书《From Performance to Learning: Assessing to Encourage Growth Mindsets》（第 15 页对照表把 Journals 与 Portfolios 列为成长型思维做法；作品集案例由 High Tech High 来）—— 属实践材料，不写「研究表明」；②Hattie 元分析里「学生自己报告自己的进步」那一项—— 引用宜写「在该元分析中位居前列」，不写「已证明效应量为 1.44」（其效应量算法有争议）；③Berman (2001)，见 Costa 编《Developing Minds》（3rd ed., ASCD, pp. 11–17）里 thinking journal 一条 —— 中文「思维档案」可追至此，**但不归博勒**；④Rittle-Johnson, Loehr & Durkin (2017), *ZDM*, 49(4), 599–611（ERIC EJ1149060；**DOI 未逐字核实**）。
+- **正文与附录（第十一节，现 `references/示例与反面示范.md`）还引了这几项，本条文件登记（2026-11-08 补）**：①Boaler, Dance & Woodbury (2018) youcubed 白皮书《From Performance to Learning: Assessing to Encourage Growth Mindsets》（第 15 页对照表把 Journals 与 Portfolios 列为成长型思维做法；作品集案例由 High Tech High 来）—— 属实践材料，不写「研究表明」；②Hattie 元分析里「学生自己报告自己的进步」那一项—— 引用宜写「在该元分析中位居前列」，不写「已证明效应量为 1.44」（其效应量算法有争议）；③Berman (2001)，见 Costa 编《Developing Minds》（3rd ed., ASCD, pp. 11–17）里 thinking journal 一条 —— 中文「思维档案」可追至此，**但不归博勒**；④Rittle-Johnson, Loehr & Durkin (2017), *ZDM*, 49(4), 599–611（ERIC EJ1149060；**DOI 未逐字核实**）。
 - **下列三项本 skill 只作排除项与备查用，不对应任何一条规则（2026-11-08 标）**：范希尔五水平（只用于写作时不写「水平跃迁」）、成长型思维干预（只写小效应带条件）、生成效应（只用来挡「拿它给先猜后教背书」）。
 
 - **低龄游戏库的来源（references/低龄游戏库.md，2026-11-17 登记）**：①youcubed《Fluency Without Fear》（https://www.youcubed.org/evidence/fluency-without-fear/）——啪一啪、离 100 有多近、乘法卡片、数字三棱镜四个游戏的玩法出处；属网站实践材料，**原文未逐字核实**，只写「玩法来自 youcubed 网站」，不写「研究表明」；②《妙趣横生玩数学》游戏法课——作者自家设计与筛选，自家设计照写不标来源；③《你好！数学·树叶尺子》《汉声数学·数是怎么来的？》为绘本来源，只取延伸玩法；④扔纸团取自 Boaler《这才是数学（教师篇）》的课堂活动，只取动作，话术按本 skill 口径改写——「犯错让大脑生长」那句不能进（见上方第五条）。
@@ -75,3 +75,39 @@
 - **张齐华**（南京，社会化学习；《社会化学习实践手册》，教育科学出版社 2024）：六问问句库。
 
 **本 skill 的边界**：上述文献解释本 skill 为什么这样设计，不构成对任何孩子学习效果的承诺。
+
+
+---
+
+## 附：从主文件搬来的两节（2026-11-22，v1.3.0 瘦身）
+
+### 博勒团队那两件做法怎么用到这里（2026-10-04 查原文后定）
+
+出处：Boaler, J., Dance, K., & Woodbury, E. (2018). *From Performance to Learning: Assessing to Encourage Growth Mindsets*（youcubed 白皮书），第 15 页的对照表把 **Journals** 与 **Portfolios and portfolio conferences** 列为成长型思维的做法。
+
+**她的作品集是什么样**（白皮书里 High Tech High 案例）：学生在课程中持续保存自己的作业与学习证据，有纸质也有数字版；数字版是学生对单元大概念的问题作答；到学期末，学生带着**自评表＋作品集**去找老师做成绩谈判，用作品集当「我该得这个成绩」的证据。关键词是**证据**与**自己解释**，不是老师收集打分。
+
+**她的日志是什么样的**：白皮书只在对照表里列了 Journals，未展开；更具体的是书中引用的中学老师做法——用反思题代替天天刷题：今天的大想法是什么、我学到了什么、我有什么好主意、我在哪里卡住、今天的东西还能用在哪、我还有什么问题。同一份白皮书里还引了 Hattie 的元分析排序：**「学生自己报告自己的进步」排在最前**（引用时宜写「在该元分析中位居前列」，不写「已证明效应量为 1.44」——Hattie 的效应量算法有争议）。
+
+**用到这个 skill 里的三条**：
+
+1. **反思问句进收尾**（已在用）：不问「你学会了吗」，问「这次你哪一步想通了」
+2. **思维档案就是孩子的作品集**：内容只放他自己攻克的题加上他说的原话，收藏和解释的人都是他自己；不评分、不排名、不对外
+3. **不采用的部分**：成绩谈判（这里没有分数）、自评量表（那是学校评估体系的东西）、班级测验机制；也不要求孩子写、不打卡、不做界面——反思一句话就够，几秒钟说完
+
+同一份白皮书里还有一条与本 skill 一致的规则：成长型思维的评估做法里包括**没有时间限制**。不动计时器、不拿速度说事，与博勒团队的做法是同一立场。
+
+### 出处与依据（2026-10-04 核实）
+
+**「思维档案」不是博勒提出的，也不能挂她的名字。** 核实结论：她的著作、论文与 Youcubed 材料中没有这个术语；Youcubed 2018 白皮书只是把作品集与学习日志列为做法，属于推荐而非提出。对外只说「这是我们自己的做法」，不说源流来自某某。
+
+**档案袋这条脉络的真实源流**：Wolf (1989), Educational Leadership 46(7), 35–39（ERIC EJ387142）；Paulson, Paulson & Meyer (1991), Educational Leadership 48(5), 60–63（ERIC EJ421352）；NCTM (1995) *Assessment Standards for School Mathematics*（ISBN 0-87353-419-0，属专业团体政策文件，不是同行评议研究）。中文语境里「思维档案」更接近 thinking journal 的译名，可追至 Berman (2001)，见 Costa 编 *Developing Minds*（3rd ed., pp. 11–17, ASCD）。
+
+**真正支撑「把自己想的过程说出来能促进学习」的证据是自我解释这条线**：
+
+- Chi, M. T. H., Bassok, M., Lewis, M. W., Reimann, P., & Glaser, R. (1989). Self-explanations. *Cognitive Science, 13*(2), 145–182. DOI 10.1207/s15516709cog1302_1（描述性发现：学得好的孩子自发自解更多）
+- Chi, M. T. H., de Leeuw, N., Chiu, M.-H., & LaVancher, C. (1994). Eliciting self-explanations improves understanding. *Cognitive Science, 18*(3), 439–477. DOI 10.1207/s15516709cog1803_3（提示式干预实验）
+- Bisra, K., Liu, Q., Nesbit, J. C., Salimi, F., & Winne, P. H. (2018). Inducing self-explanation: A meta-analysis. *Educational Psychology Review, 30*(3), 703–725. DOI 10.1007/s10648-018-9434-x
+- Rittle-Johnson, B., Loehr, A. M., & Durkin, K. (2017). *ZDM, 49*(4), 599–611（ERIC EJ1149060；DOI 未逐字核实）
+
+**措辞边界**：可写「元分析表明」时引 Bisra 2018（64 项研究的合并效应口径为 g≈0.55，少数二手文献写 0.66，不要用 0.66）；Chi 1989 与 1994 不能混——前者是描述性发现，后者才是干预实验；学习日志类材料多为实践性材料，不要写「大量研究表明日志提升数学成绩」。
