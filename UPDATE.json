@@ -14,8 +14,8 @@
     "references/变更记录.md": "964e128a7866903946352334216fc8b2",
     "references/示例与反面示范.md": "5f688c7dbd8650b9bab01c389ccb11ec",
     "references/记录格式.md": "7490e9e7a776e571c9ff86a9acc90608",
-    "scripts/check-update.sh": "30014381da871d21dd9e55b6e88fe3e8",
-    "scripts/update-skill.sh": "160c4071c5f5173d085c73050111ae0c"
+    "scripts/check-update.sh": "4a31cd83a6fe5d8eeb77e17dce8ad94c",
+    "scripts/update-skill.sh": "29610d2ffd1013f8a0351c6d8511fb2b"
   },
   "details_url": "https://github.com/ahnuange/nuan-math-coach/releases"
 }
