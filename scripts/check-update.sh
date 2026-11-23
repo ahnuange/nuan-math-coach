@@ -9,6 +9,9 @@
 #      绝不让一次版本检查打断孩子的对话，也绝不编一句「已是最新版」。
 #   2. 24 小时只联网一次，缓存写在 ~/.nuan-math-coach/update_check_at。
 #   3. 只在远端版本严格高于本地时才输出，最多一行。
+#
+# 提醒句的 notice 由发布方在 UPDATE.json 里写，必须一句话说清这版改了什么，
+# 不写「优化了体验」这种等于没说的空话。
 
 set -uo pipefail
 
@@ -135,6 +138,6 @@ version_is_higher() {
 }
 
 if version_is_higher "$REMOTE_VERSION" "$LOCAL_VERSION"; then
-  printf '数学教练出新版了（v%s → v%s）。%s回一句 1，我现在帮你换。\n' \
+  printf '数学教练出新版了（v%s → v%s），%s回复 1，我现在帮你更新。\n' \
     "$LOCAL_VERSION" "$REMOTE_VERSION" "$NOTICE"
 fi
