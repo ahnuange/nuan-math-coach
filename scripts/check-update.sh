@@ -133,6 +133,6 @@ version_is_higher() {
 }
 
 if version_is_higher "$REMOTE_VERSION" "$LOCAL_VERSION"; then
-  printf '数学教练出新版了（v%s → v%s）。%s想换新版就去 GitHub 搜 nuan-math-coach，下载最新那个包，解开覆盖旧文件夹。\n' \
+  printf '数学教练出新版了（v%s → v%s）。%s回一句 1，我现在帮你换。\n' \
     "$LOCAL_VERSION" "$REMOTE_VERSION" "$NOTICE"
 fi
