@@ -1,5 +1,21 @@
 {
-  "version": "1.5.0",
-  "notice": "跑完一轮会在最后提一句有没有新版，不用你自己去翻仓库",
+  "version": "1.6.0",
+  "notice": "现在回一句 1，它自己就把新版换上了，不用你去翻 GitHub",
+  "files": {
+    "SKILL.md": "c9f90fa78427711f6890178bed247eec",
+    "README.md": "8d7c78fcc8d5b16f4af2617706f89b8c",
+    "LICENSE": "f5a53c7ab38ba3772e879f1407d3d412",
+    "references/家长须知.md": "d734ebd50777ee1f5dd098e6ed4cdde1",
+    "references/低龄游戏库.md": "8ca480b956e13355a65bbb38d67f79ea",
+    "references/sources.md": "6dd5e167f3180c5900c68a76b7cc3aef",
+    "references/scenarios.md": "f5ecb3a4b441fa2425a00498f4cb4645",
+    "references/walkthrough.md": "7facfae84ea8dc74b9012ff39f829280",
+    "references/画图与基准.md": "928e9dddb500f23a4cc7ddb704f8c1ba",
+    "references/变更记录.md": "964e128a7866903946352334216fc8b2",
+    "references/示例与反面示范.md": "5f688c7dbd8650b9bab01c389ccb11ec",
+    "references/记录格式.md": "7490e9e7a776e571c9ff86a9acc90608",
+    "scripts/check-update.sh": "30014381da871d21dd9e55b6e88fe3e8",
+    "scripts/update-skill.sh": "160c4071c5f5173d085c73050111ae0c"
+  },
   "details_url": "https://github.com/ahnuange/nuan-math-coach/releases"
 }
