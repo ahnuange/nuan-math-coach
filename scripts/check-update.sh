@@ -18,10 +18,11 @@ STATE_DIR="${NUAN_UPDATE_CACHE_DIR:-$HOME/.nuan-math-coach}"
 CACHE_FILE="$STATE_DIR/update_check_at"
 CACHE_TTL=86400
 
-# 国内直连 raw.githubusercontent.com 常被挡，先试 jsdelivr 镜像，再试官方 raw
+# 国内直连 raw.githubusercontent.com 常被挡，先试 jsdelivr 镜像（慢一点但通），再试官方 raw
+# jsdelivr 实测 2.4 到 4.7 秒都有，卡 8 秒；raw 直连经常整个超时，只给 4 秒
 URLS=(
-  "${NUAN_UPDATE_URL:-https://cdn.jsdelivr.net/gh/ahnuange/nuan-math-coach@main/UPDATE.json}"
-  "https://raw.githubusercontent.com/ahnuange/nuan-math-coach/main/UPDATE.json"
+  "${NUAN_UPDATE_URL:-https://cdn.jsdelivr.net/gh/ahnuange/nuan-math-coach@main/UPDATE.json}|8"
+  "https://raw.githubusercontent.com/ahnuange/nuan-math-coach/main/UPDATE.json|4"
 )
 
 IGNORE_CACHE=0
@@ -51,9 +52,14 @@ mkdir -p "$STATE_DIR" 2>/dev/null || exit 0
 printf '%s\n' "$NOW" > "$CACHE_FILE" 2>/dev/null || true
 
 PAYLOAD=""
-for url in "${URLS[@]}"; do
+for entry in "${URLS[@]}"; do
+  case "$entry" in
+    *"|"*) url="${entry%|*}"; secs="${entry##*|}" ;;
+    *) url="$entry"; secs=8 ;;
+  esac
   [ -n "$url" ] || continue
-  PAYLOAD="$(curl -fsS --max-time 3 "$url" 2>/dev/null || true)"
+  case "$secs" in ''|*[!0-9]*) secs=8 ;; esac
+  PAYLOAD="$(curl -fsS --max-time "$secs" "$url" 2>/dev/null || true)"
   [ -n "$PAYLOAD" ] && break
 done
 [ -n "$PAYLOAD" ] || exit 0
