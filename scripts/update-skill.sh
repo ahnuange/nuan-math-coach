@@ -36,6 +36,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import urllib.parse
 import urllib.request
 
 REPO = "ahnuange/nuan-math-coach"
@@ -54,7 +55,10 @@ def say(msg):
 
 
 def fetch(url, timeout):
-    req = urllib.request.Request(url, headers={"User-Agent": "nuan-math-coach-updater"})
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "nuan-math-coach-updater",
+        "Accept": "application/vnd.github.raw",
+    })
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read()
 
@@ -75,10 +79,11 @@ def vtuple(v):
 
 
 def load_manifest():
+    # api 最新（不缓存），raw 次之，jsdelivr 的 @main 会被缓存最多 12 小时，只能當傅用
     sources = [
-        "https://cdn.jsdelivr.net/gh/%s@main/UPDATE.json" % REPO,
-        "https://api.github.com/repos/%s/contents/UPDATE.json?ref=main" % REPO,
+        "https://api.github.com/repos/%s/contents/UPDATE.json" % REPO,
         "https://raw.githubusercontent.com/%s/main/UPDATE.json" % REPO,
+        "https://cdn.jsdelivr.net/gh/%s@main/UPDATE.json" % REPO,
     ]
     for url in sources:
         try:
@@ -86,11 +91,10 @@ def load_manifest():
         except Exception:
             continue
         try:
-            text = raw.decode("utf-8")
-            if url.startswith("https://api.github.com"):
+            data = json.loads(raw.decode("utf-8"))
+            if isinstance(data, dict) and "content" in data and "version" not in data:
                 import base64
-                text = base64.b64decode(json.loads(text)["content"]).decode("utf-8")
-            data = json.loads(text)
+                data = json.loads(base64.b64decode(data["content"]).decode("utf-8"))
             version = data["version"]
             files = data["files"]
             if not VERSION_RE.match(version):
@@ -108,10 +112,13 @@ def load_manifest():
 
 
 def file_sources(rel, version):
+    # 按版本标签取，三个源都是新的（标签不会再变）
+    # 中文文件名必须先百分号编码，直接塞进 URL 会请求失败
+    quoted = urllib.parse.quote(rel)
     return [
-        "https://cdn.jsdelivr.net/gh/%s@v%s/%s" % (REPO, version, rel),
-        "https://api.github.com/repos/%s/contents/%s?ref=v%s" % (REPO, rel, version),
-        "https://raw.githubusercontent.com/%s/v%s/%s" % (REPO, version, rel),
+        "https://api.github.com/repos/%s/contents/%s?ref=v%s" % (REPO, quoted, version),
+        "https://raw.githubusercontent.com/%s/v%s/%s" % (REPO, version, quoted),
+        "https://cdn.jsdelivr.net/gh/%s@v%s/%s" % (REPO, version, quoted),
     ]
 
 
@@ -121,12 +128,15 @@ def download(rel, version):
             raw = fetch(url, 10)
         except Exception:
             continue
-        if url.startswith("https://api.github.com"):
+        if raw[:1] == b"{":
+            # api 偶尔会把内容包成 base64 返回，解一层；原样返回的就不动
             try:
                 import base64
-                raw = base64.b64decode(json.loads(raw.decode("utf-8"))["content"])
+                payload = json.loads(raw.decode("utf-8"))
+                if isinstance(payload, dict) and "content" in payload:
+                    raw = base64.b64decode(payload["content"])
             except Exception:
-                continue
+                pass
         if raw:
             return raw
     return None

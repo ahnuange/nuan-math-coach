@@ -18,11 +18,13 @@ STATE_DIR="${NUAN_UPDATE_CACHE_DIR:-$HOME/.nuan-math-coach}"
 CACHE_FILE="$STATE_DIR/update_check_at"
 CACHE_TTL=86400
 
-# 国内直连 raw.githubusercontent.com 常被挡，先试 jsdelivr 镜像（慢一点但通），再试官方 raw
-# jsdelivr 实测 2.4 到 4.7 秒都有，卡 8 秒；raw 直连经常整个超时，只给 4 秒
+# 三个源，顺序有讲究：
+#   api.github.com 最新最快（它不缓存），raw 也新但国内常被挡，jsdelivr 通但 @main 会被缓存最多 12 小时
+#   所以 jsdelivr 只当最后的傅用，不然刚发的新版它会报不出来
 URLS=(
-  "${NUAN_UPDATE_URL:-https://cdn.jsdelivr.net/gh/ahnuange/nuan-math-coach@main/UPDATE.json}|8"
+  "${NUAN_UPDATE_URL:-https://api.github.com/repos/ahnuange/nuan-math-coach/contents/UPDATE.json}|8"
   "https://raw.githubusercontent.com/ahnuange/nuan-math-coach/main/UPDATE.json|4"
+  "https://cdn.jsdelivr.net/gh/ahnuange/nuan-math-coach@main/UPDATE.json|8"
 )
 
 IGNORE_CACHE=0
@@ -59,7 +61,7 @@ for entry in "${URLS[@]}"; do
   esac
   [ -n "$url" ] || continue
   case "$secs" in ''|*[!0-9]*) secs=8 ;; esac
-  PAYLOAD="$(curl -fsS --max-time "$secs" "$url" 2>/dev/null || true)"
+  PAYLOAD="$(curl -fsS --max-time "$secs" -H "Accept: application/vnd.github.raw" "$url" 2>/dev/null || true)"
   [ -n "$PAYLOAD" ] && break
 done
 [ -n "$PAYLOAD" ] || exit 0
